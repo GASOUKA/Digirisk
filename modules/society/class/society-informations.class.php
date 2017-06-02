@@ -42,10 +42,15 @@ class Society_Informations_Class extends Singleton_Util {
 
 		$owner_user = $this->get_owner_user( $element );
 
+		$risks = Risk_Class::g()->get( array(
+			'post_parent' => $element->id,
+		) );
+
 		View_Util::exec( 'society', 'informations/main', array(
 			'element' => $element,
 			'owner_user' => $owner_user,
 			'address' => $address,
+			'number_risks' => count( $risks ),
 		) );
 	}
 

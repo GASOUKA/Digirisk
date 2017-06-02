@@ -18,28 +18,23 @@ if ( ! defined( 'ABSPATH' ) ) { exit; } ?>
 	<header>
 		<ul>
 			<li>
-				<span>test</span>
-				<span>test</span>
+				<span><?php echo esc_html( $number_risks ); ?></span>
+				<span><?php esc_html_e( 'Nombre de risque', 'digirisk' ); ?></span>
 			</li>
 
 			<li>
 				<span>test</span>
-				<span>test</span>
+				<span><?php esc_html_e( 'Le risque le plus élevé', 'digirisk' ); ?></span>
 			</li>
 
 			<li>
 				<span>test</span>
-				<span>test</span>
+				<span><?php esc_html_e( 'Somme des cotations', 'digirisk' ); ?></span>
 			</li>
 
 			<li>
 				<span>test</span>
-				<span>test</span>
-			</li>
-
-			<li>
-				<span>test</span>
-				<span>test</span>
+				<span><?php esc_html_e( 'Dernière mise à jour', 'digirisk' ); ?></span>
 			</li>
 		</ul>
 	</header>
