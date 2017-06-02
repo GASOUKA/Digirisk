@@ -4,7 +4,7 @@
  *
  * @author Jimmy Latour <jimmy@evarisk.com>
  * @since 0.1
- * @version 6.2.3.0
+ * @version 6.2.10.0
  * @copyright 2015-2017 Evarisk
  * @package establishment
  * @subpackage filter
@@ -24,7 +24,7 @@ class Society_Shortcode {
 	 */
 	public function __construct() {
 		add_shortcode( 'digi_dashboard', array( $this, 'callback_digi_dashboard' ) );
-		add_shortcode( 'digi-configuration', array( $this, 'callback_configuration' ) );
+		add_shortcode( 'digi-informations', array( $this, 'callback_informations' ) );
 	}
 
 	/**
@@ -58,12 +58,15 @@ class Society_Shortcode {
 	 * @param array $param Les paramètres du shortcode.
 	 *
 	 * @return void
+	 *
+	 * @since 1.0.0.0
+	 * @version 6.2.10.0
 	 */
-	public function callback_configuration( $param ) {
+	public function callback_informations( $param ) {
 		$element_id = $param['post_id'];
 		$element = Society_Class::g()->show_by_type( $element_id );
 
-		Society_Configuration_Class::g()->display( $element );
+		Society_Informations_Class::g()->display( $element );
 	}
 }
 

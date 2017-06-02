@@ -4,7 +4,7 @@
  *
  * @author Jimmy Latour <jimmy@evarisk.com>
  * @since 6.2.1.0
- * @version 6.2.5.0
+ * @version 6.2.10.0
  * @copyright 2015-2017 Evarisk
  * @package society
  * @subpackage class
@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 /**
  * Appelle la vue pour afficher le formulaire de configuration d'une société
  */
-class Society_Configuration_Class extends Singleton_Util {
+class Society_Informations_Class extends Singleton_Util {
 
 	/**
 	 * Le constructeur
@@ -34,7 +34,7 @@ class Society_Configuration_Class extends Singleton_Util {
 	 * @return void
 	 *
 	 * @since 6.2.1.0
-	 * @version 6.2.5.0
+	 * @version 6.2.10.0
 	 */
 	public function display( $element ) {
 		$address = Society_Class::g()->get_address( $element );
@@ -42,7 +42,11 @@ class Society_Configuration_Class extends Singleton_Util {
 
 		$owner_user = $this->get_owner_user( $element );
 
-		View_Util::exec( 'society', 'configuration-form', array( 'element' => $element, 'owner_user' => $owner_user, 'address' => $address ) );
+		View_Util::exec( 'society', 'informations/main', array(
+			'element' => $element,
+			'owner_user' => $owner_user,
+			'address' => $address,
+		) );
 	}
 
 	/**
@@ -84,4 +88,4 @@ class Society_Configuration_Class extends Singleton_Util {
 	}
 }
 
-Society_Configuration_Class::g();
+Society_Informations_Class::g();

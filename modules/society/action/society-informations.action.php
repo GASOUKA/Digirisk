@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 /**
  * Gestion de la requête AJAX pour enregistrer la configuration d'un groupement
  */
-class Society_Configuration_Action {
+class Society_Informations_Action {
 
 	/**
 	 * Le constructeur
@@ -54,4 +54,4 @@ class Society_Configuration_Action {
 	}
 }
 
-new Society_Configuration_Action();
+new Society_Informations_Action();
